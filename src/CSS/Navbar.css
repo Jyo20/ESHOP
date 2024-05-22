@@ -7,10 +7,10 @@
   /*background-color: #7d3cc9;*/
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.container .nav-container {
+.container .left-nav {
   width: 10%;
 }
-.nav-container > a {
+.left-nav > a {
   font-size: 2rem !important;
   font-weight: 700 !important;
  background: -webkit-linear-gradient(#0ee6c9, #7d3cc9);
@@ -18,8 +18,8 @@
   -webkit-text-fill-color: transparent;
 }
 
-.container > .nav-container + div {
-  width: 60%;
+.container > .middle-navBar{
+  width: 40%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -39,15 +39,26 @@
   border-bottom: none !important;
 }
 .login-div{
-  width: 150px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  border:1px solid;
-};
+  gap: 10px;
+}
 .login-div>a{
-  margin-right: 10px;
+/*margin-right: 10px;*/
   color: #6407ce;
+  
 } 
-
+.login-div > a > span{
+  margin-left: 0.4rem;
+ 
+}
+.right-nav{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 /*Home css*/
