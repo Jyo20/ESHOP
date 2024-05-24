@@ -3,25 +3,28 @@ import "../CSS/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 
-const NavBar = ({ isLogged }) => {
+const NavBar = ({ isLogged,username }) => {
+  
   let User = () => {
     return (
       <>
         <div className="login-div">
           <NavLink to={"/user"} className={"NoLink"}>
             <FaUser />
-            <span>Hello, User</span>
+            
           </NavLink>
-          <NavLink to={"/logout"}>Logout</NavLink>
+          <span>Hello,{username}</span>
+          <NavLink to={"/login"}>Logout</NavLink>
         </div>
       </>
     );
   };
+  
   let Guest = () => {
     return (
       <>
         <div className="login-div">
-          <NavLink to={"/sign"}>Signup</NavLink>
+          <NavLink to={"/signup"}>Signup</NavLink>
           <NavLink to={"/login"}>Login</NavLink>
         </div>
       </>
@@ -42,10 +45,15 @@ const NavBar = ({ isLogged }) => {
         <NavLink to={"/Contact"}> Contact US</NavLink>
       </div>
       <div className="right-nav">
-        {isLogged === true ? <User /> : <Guest />}
+        {isLogged === true ?<User />: <Guest />}
         <NavLink to={"/Cart"} className={"NoLink"}>
           <FaShoppingCart />
         </NavLink>
+      </div>
+      <div className="burger" >
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );
