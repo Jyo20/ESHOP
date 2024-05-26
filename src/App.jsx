@@ -1,4 +1,4 @@
-import React ,{ useState }from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import Home from "./components/Home";
@@ -9,12 +9,12 @@ import Cart from "./components/Cart";
 import PageNotFound from "./components/PageNotFound";
 import Login from "./components/Validation/Login";
 import Signup from "./components/Validation/Signup";
+import { SessionProvider } from "./ContextApi/SessionContext";
 const App = () => {
-  let [isLoggIn,setIsLoggedIn]=useState(false);
   return (
     <div>
-      <Navbar isLogged={isLoggIn} username={"sachin"
-      }/>
+      <SessionProvider>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
@@ -25,6 +25,7 @@ const App = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
       </Routes>
+      </SessionProvider>
     </div>
   );
 };

@@ -1,10 +1,12 @@
 import React from "react";
 import "../CSS/Navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation,useNavigate } from "react-router-dom";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 
-const NavBar = ({ isLogged,username }) => {
-  
+const NavBar = () => {
+  const location = useLocation();
+  let navigate=useNavigate();
+  const username = location.state && location.state.username;
   let User = () => {
     return (
       <>
@@ -14,7 +16,7 @@ const NavBar = ({ isLogged,username }) => {
             
           </NavLink>
           <span>Hello,{username}</span>
-          <NavLink to={"/login"}>Logout</NavLink>
+          <NavLink to={"/login"}className="btn">Logout</NavLink>
         </div>
       </>
     );
@@ -24,13 +26,17 @@ const NavBar = ({ isLogged,username }) => {
     return (
       <>
         <div className="login-div">
-          <NavLink to={"/signup"}>Signup</NavLink>
-          <NavLink to={"/login"}>Login</NavLink>
+          <NavLink to={"/signup"} className="btn">Signup</NavLink>
+          <NavLink to={"/login"} className="btn">Login</NavLink>
         </div>
       </>
     );
   };
 
+  //logout
+  let handleLogout=()=>{
+    navigate("/login")
+  }
   return (
     <div className="container">
       <div className="left-nav">
@@ -45,7 +51,7 @@ const NavBar = ({ isLogged,username }) => {
         <NavLink to={"/Contact"}> Contact US</NavLink>
       </div>
       <div className="right-nav">
-        {isLogged === true ?<User />: <Guest />}
+        {username ? <User />: <Guest />}
         <NavLink to={"/Cart"} className={"NoLink"}>
           <FaShoppingCart />
         </NavLink>
