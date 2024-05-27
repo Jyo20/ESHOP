@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,7 +14,6 @@
 }
 .container .left-nav {
   width: 10%;
- 
 }
 .left-nav > a {
   font-size: 2rem !important;
@@ -32,8 +31,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
- 
 }
 .container a {
   text-decoration: none;
@@ -41,16 +38,25 @@
   font-size: 1.2rem;
   color: rgb(138, 3, 138);
 }
-
 .container a:hover {
-  border-bottom: 2px solid #7d3cc9;
-  text-transform: uppercase;
-  transition: text-transform border-bottom 250ms;
-  transform: translateY(-5px);
+  border: 1px solid #710188;
+  transition: all 0.3s ease-in-out;
+  padding: 5px;
+  border-radius: 20px;
 }
-.NoLink:hover {
+.container a:hover::after {
+  border: 2px solid #710188;
+  transition: all 0.5s ease-out;
+}
+.container .left-nav > a:hover,
+.container .right-nav > a:hover {
   border-bottom: none !important;
+  border: none !important;
+  transition: none !important;
+  padding: 0;
+  border-radius: 0;
 }
+
 .login-div {
   width: 100%;
   display: flex;
@@ -58,8 +64,6 @@
   align-items: center;
   flex-direction: row;
   gap: 10px;
-
-
 }
 .login-div > a {
   /*margin-right: 10px;*/
@@ -76,14 +80,13 @@
   align-items: center;
   gap: 10px;
   margin-right: 1rem;
-  
 }
-span{
+span {
   font-weight: bold;
   color: rgb(138, 3, 138);
   font-size: 1.2rem;
 }
-.burger{
+.burger {
   border: 2px solid #7d3cc9;
   width: 2%;
   height: 20px;
@@ -95,18 +98,19 @@ span{
   cursor: pointer;
   display: none;
 }
-.burger>div{
+.burger > div {
   border: 2px solid #6407ce;
   margin: 3px;
   width: 100%;
 }
 
-.btn:hover{
-  border: 1px solid rgb(138, 3, 138);;
+.btn:hover {
+  border: 1px solid rgb(138, 3, 138);
   padding: 5px;
   border-radius: 15px;
 }
-/*Home css*/
+
+/*******************     Home css**********************/
 
 .image-wrapper {
   display: flex;
@@ -125,58 +129,85 @@ span{
 }
 .carousel {
   width: 100% !important;
-  border: 1px solid;
-  height: 600px;
+  height: 560px;
 }
 .slide > div > img {
   height: auto !important;
 }
-.carousel-container {
-  height: 500px; /* Adjust the height as needed */
+.text{
+  position: relative;
 }
+.text >div{
+  position: absolute;
+  top: 120px;
+  right: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: left;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.5rem;
 
-
-@media screen and (max-width: 768px){
-  .container{
+}
+.text >div button{
+  padding: 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  margin-top: 10px;
+  color: #710188;
+  letter-spacing: 2px;
+}
+.text >div button:hover{
+  border: 1px solid #710188;
+}
+.text >div span{
+  background-color: orange;
+  padding: 5px;
+  
+}
+@media screen and (max-width: 768px) {
+  .container {
     width: 100%;
   }
-.burger{
-  display: contents;
-  border: 2px solid #7d3cc9;
-  width: 2%;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0.4rem;
-  cursor: pointer;
-}
+  .burger {
+    display: contents;
+    border: 2px solid #7d3cc9;
+    width: 2%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.4rem;
+    cursor: pointer;
+  }
 
-.container > .middle-navBar{
-  display: none;
-  flex-direction: column;
-
-}
-.right-nav{
-  display: none;
-}
+  .container > .middle-navBar {
+    display: none;
+    flex-direction: column;
+  }
+  .right-nav {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   /* Styles for medium-sized screens */
   .burger {
     display: none;
-   
   }
 
   .container > .middle-navBar {
     width: 50%;
-
-   
   }
 
   .right-nav {
-   
   }
 }
