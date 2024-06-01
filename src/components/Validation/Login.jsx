@@ -47,12 +47,7 @@ const Login = () => {
       <div className="login-container">
         <img src={loginImage} alt="" />
         <form onSubmit={handleSubmit}>
-          <div className="logo">
-            <span>Welcome to</span>
-            <NavLink to={"/"} className={"NoLink"}>
-              ESHOP
-            </NavLink>
-          </div>
+          <h1>SignIn Form</h1>
           <div>
             {" "}
             <label htmlFor="">Username</label>
@@ -60,7 +55,7 @@ const Login = () => {
               type="text"
               name="username"
               id="username"
-              placeholder="Enter Username"
+              placeholder="Enter Username or Email"
               value={usernameState}
               onChange={(e) => {
                 setUsername(e.target.value);
@@ -84,7 +79,17 @@ const Login = () => {
             />
           </div>
           <span className="error">{passwordError}</span>
-          <button type="submit">Login</button>
+          <div className="password-Container">
+            <div className="password-Subcontainer">
+            <input type="checkbox" name="passwordRemember" id="passwordRemember" />
+            <label htmlFor="formCheckLabel">Remember me</label>
+            </div>
+            <div className="forgot-password">
+              <NavLink to={"#"}>Forgot password ?</NavLink>
+            </div>
+          </div>
+          
+          <button type="submit">Sign In</button>
         </form>
       </div>
     </>

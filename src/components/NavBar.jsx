@@ -16,7 +16,7 @@ const NavBar = () => {
             
           </NavLink>
           <span>Hello,{username}</span>
-          <NavLink to={"/login"}className="btn">Logout</NavLink>
+          <NavLink to={"login"}className="btn">Logout</NavLink>
         </div>
       </>
     );
@@ -26,8 +26,8 @@ const NavBar = () => {
     return (
       <>
         <div className="login-div">
-          <NavLink to={"/signup"} className="btn">Signup</NavLink>
-          <NavLink to={"/login"} className="btn">Login</NavLink>
+          <NavLink to={"registration/signup"} className="btn">Signup</NavLink>
+          <NavLink to={"registration/login"} className="btn">Sign In</NavLink>
         </div>
       </>
     );
@@ -35,7 +35,7 @@ const NavBar = () => {
 
   //logout
   let handleLogout=()=>{
-    navigate("/login")
+    navigate("login")
   }
   return (
     <div className="container">

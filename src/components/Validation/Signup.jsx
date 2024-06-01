@@ -18,7 +18,7 @@ export default function Signup() {
               />
             </div>
             <div>
-              <label htmlFor="">Email Id</label>
+              <label htmlFor="">Email</label>
               <input
                 type="email"
                 name="email"
@@ -48,6 +48,6 @@ export default function Signup() {
             <button type="submit">Register</button>
           </form>
         </div>
-        ]</>
+        </>
   )
 }

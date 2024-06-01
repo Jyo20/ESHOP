@@ -11,6 +11,10 @@
   align-items: center;
   /*background-color: #7d3cc9;*/
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+background-color: #fff;
 }
 .container .left-nav {
   width: 10%;
