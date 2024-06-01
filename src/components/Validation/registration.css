@@ -5,7 +5,7 @@
 }
 .registration-container{
     width: 50%;
-    border: 1px solid;
+    /*border: 1px solid;*/
     display: flex;
     margin: auto;
     align-items: center;
@@ -16,23 +16,24 @@
 .registration-btn {
     width: 30%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
     position: absolute;
     top: 90px;
     margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 .registration-btn a{
+    width: 100%;
     padding: 1rem;
-    border-radius: 15px;
-    
+    text-decoration: none;
+    text-transform: uppercase;
 }
-.active{
-    background-color: lightgrey;
+.registration-btn > a.active {
+    background-color: lightgrey !important;
     color:black;
     font-weight: 600;
 }
+
 .logo > a{
     font-size: 2rem !important;
     font-weight: 700 !important;

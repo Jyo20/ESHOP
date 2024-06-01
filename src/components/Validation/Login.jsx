@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./validation.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,useLocation} from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import loginImage from "../../Images/login.jpg";
 const Login = () => {
@@ -9,6 +9,10 @@ const Login = () => {
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   let navigate = useNavigate();
+  const location = useLocation();
+  //getting data from signup component 
+  const username = location.state && location.state.username;
+  const password=location.state && location.state.password;
   let validateInput = () => {
     let valid = true;
     if (usernameState === "" && passwordState === "") {
@@ -38,8 +42,13 @@ const Login = () => {
   let handleSubmit = (e) => {
     e.preventDefault();
     if (validateInput()) {
-      alert("Successfully Login");
+      if(usernameState===username && passwordState===password){
+        alert("Successfully Login");
       navigate("/",{state:{username:usernameState}});
+      }else{
+        setUsernameError("*Not Valid Username");
+      setPasswordError("*Not Valid Password");
+      }
     }
   };
   return (
@@ -47,7 +56,7 @@ const Login = () => {
       <div className="login-container">
         <img src={loginImage} alt="" />
         <form onSubmit={handleSubmit}>
-          <h1>SignIn Form</h1>
+          <h1>Login Form</h1>
           <div>
             {" "}
             <label htmlFor="">Username</label>
